@@ -29,6 +29,29 @@ Either as with the title by just creating a string (or an f-string). Or as with 
 - passenger count
 '''
 
+event_time = st.datetime_input(
+    "Schedule your event",
+    datetime.datetime(2025, 11, 19, 16, 45),
+)
+st.write("Event scheduled for", event_time)
+
+number = st.number_input('Insert a number')
+
+st.write('The current number is ', number)
+
+
+
+def get_map_data():
+
+    return pd.DataFrame(
+            np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+            columns=['lat', 'lon']
+        )
+
+df = get_map_data()
+
+st.map(df)
+
 '''
 ## Once we have these, let's call our API in order to retrieve a prediction
 
@@ -54,27 +77,3 @@ if url == 'https://taxifare.lewagon.ai/predict':
 ## Finally, we can display the prediction to the user
 
 '''
-
-
-event_time = st.datetime_input(
-    "Schedule your event",
-    datetime.datetime(2025, 11, 19, 16, 45),
-)
-st.write("Event scheduled for", event_time)
-
-number = st.number_input('Insert a number')
-
-st.write('The current number is ', number)
-
-
-
-def get_map_data():
-
-    return pd.DataFrame(
-            np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
-            columns=['lat', 'lon']
-        )
-
-df = get_map_data()
-
-st.map(df)
