@@ -109,6 +109,44 @@ params = {
 
 }
 
+
+
+pickup_longitude = st.number_input(
+    "Pickup longitude",
+    value=-73.95
+)
+
+pickup_latitude = st.number_input(
+    "Pickup latitude",
+    value=40.78
+)
+
+dropoff_longitude = st.number_input(
+    "Dropoff longitude",
+    value=-73.98
+)
+
+dropoff_latitude = st.number_input(
+    "Dropoff latitude",
+    value=40.76
+)
+
+passenger_count = st.number_input(
+    "Passenger count",
+    value=1,
+    step=1
+)
+
+params = {
+    "pickup_datetime": "2026-05-28 12:00:00",
+    "pickup_longitude": pickup_longitude,
+    "pickup_latitude": pickup_latitude,
+    "dropoff_longitude": dropoff_longitude,
+    "dropoff_latitude": dropoff_latitude,
+    "passenger_count": passenger_count
+}
+
+
 url = "https://taxifare.lewagon.ai/predict"
 
 response = requests.get(url, params=params)
