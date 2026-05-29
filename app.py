@@ -177,3 +177,5 @@ if st.button("Predict fare"):
     prediction = response.json()
 
     st.write(prediction)
+    
+    st.success(f"Estimated fare: ${prediction['fare']:.2f}")
