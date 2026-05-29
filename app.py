@@ -154,3 +154,20 @@ url = "https://taxifare.lewagon.ai/predict"
 response = requests.get(url, params=params)
 
 print(response.json())
+
+if st.button("Predict fare"):
+
+    params = {
+        "pickup_datetime": pickup_datetime,
+        "pickup_longitude": pickup_longitude,
+        "pickup_latitude": pickup_latitude,
+        "dropoff_longitude": dropoff_longitude,
+        "dropoff_latitude": dropoff_latitude,
+        "passenger_count": passenger_count
+    }
+
+    response = requests.get(url, params=params)
+
+    prediction = response.json()
+
+    st.write(prediction)
