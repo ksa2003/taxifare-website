@@ -147,6 +147,14 @@ params = {
 }
 
 
+data = pd.DataFrame({
+    "lat": [pickup_latitude, dropoff_latitude],
+    "lon": [pickup_longitude, dropoff_longitude]
+})
+
+st.map(data)
+
+
 url = "https://taxifare.lewagon.ai/predict"
 
 response = requests.get(url, params=params)
