@@ -59,3 +59,14 @@ st.write("Event scheduled for", event_time)
 number = st.number_input('Insert a number')
 
 st.write('The current number is ', number)
+
+def get_map_data():
+
+    return pd.DataFrame(
+            np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+            columns=['lat', 'lon']
+        )
+
+df = get_map_data()
+
+st.map(df)
