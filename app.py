@@ -66,12 +66,6 @@ dropoff_latitude = st.number_input(
     format="%.6f"
 )
 
-df = pd.DataFrame({
-    "lat": [pickup_latitude, dropoff_latitude],
-    "lon": [pickup_longitude, dropoff_longitude]
-})
-
-st.map(df)
 
 '''
 ## Once we have these, let's call our API in order to retrieve a prediction
