@@ -155,10 +155,16 @@ response = requests.get(url, params=params)
 
 print(response.json())
 
+pickup_datetime = st.datetime_input(
+    "Pickup datetime",
+    datetime.datetime(2026, 5, 28, 12, 0)
+)
+
 if st.button("Predict fare"):
 
     params = {
-        "pickup_datetime": pickup_datetime,
+        
+        "pickup_datetime": pickup_datetime.strftime("%Y-%m-%d %H:%M:%S"),
         "pickup_longitude": pickup_longitude,
         "pickup_latitude": pickup_latitude,
         "dropoff_longitude": dropoff_longitude,
