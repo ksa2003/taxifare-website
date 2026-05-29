@@ -52,6 +52,32 @@ df = get_map_data()
 
 st.map(df)
 
+import streamlit as st
+
+pickup_longitude = st.number_input(
+    "Pickup longitude",
+    value=-73.95,
+    format="%.6f"
+)
+
+pickup_latitude = st.number_input(
+    "Pickup latitude",
+    value=40.78,
+    format="%.6f"
+)
+
+dropoff_longitude = st.number_input(
+    "Dropoff longitude",
+    value=-73.98,
+    format="%.6f"
+)
+
+dropoff_latitude = st.number_input(
+    "Dropoff latitude",
+    value=40.76,
+    format="%.6f"
+)
+
 '''
 ## Once we have these, let's call our API in order to retrieve a prediction
 
