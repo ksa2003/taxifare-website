@@ -44,25 +44,25 @@ st.write('The current number is ', number)
 
 pickup_longitude = st.number_input(
     "Pickup longitude",
-    value=00.00,
+    value=-74.00,
     format="%.6f"
 )
 
 pickup_latitude = st.number_input(
     "Pickup latitude",
-    value=00.00,
+    value=40.00,
     format="%.6f"
 )
 
 dropoff_longitude = st.number_input(
     "Dropoff longitude",
-    value=00.00,
+    value=-74.01,
     format="%.6f"
 )
 
 dropoff_latitude = st.number_input(
     "Dropoff latitude",
-    value=00.00,
+    value=40.01,
     format="%.6f"
 )
 
