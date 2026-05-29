@@ -60,6 +60,8 @@ number = st.number_input('Insert a number')
 
 st.write('The current number is ', number)
 
+import pandas as pd
+
 def get_map_data():
 
     return pd.DataFrame(
