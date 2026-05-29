@@ -1,5 +1,12 @@
 import streamlit as st
 
+import pandas as pd
+
+import numpy as np
+
+import datetime
+
+
 '''
 # TaxiFareModel front
 '''
@@ -48,7 +55,6 @@ if url == 'https://taxifare.lewagon.ai/predict':
 
 '''
 
-import datetime
 
 event_time = st.datetime_input(
     "Schedule your event",
@@ -60,7 +66,7 @@ number = st.number_input('Insert a number')
 
 st.write('The current number is ', number)
 
-import pandas as pd
+
 
 def get_map_data():
 
