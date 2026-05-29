@@ -41,42 +41,36 @@ st.write('The current number is ', number)
 
 
 
-def get_map_data():
-
-    return pd.DataFrame(
-            np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
-            columns=['lat', 'lon']
-        )
-
-df = get_map_data()
-
-st.map(df)
-
-import streamlit as st
-
 pickup_longitude = st.number_input(
     "Pickup longitude",
-    value=-73.95,
+    value=00.00,
     format="%.6f"
 )
 
 pickup_latitude = st.number_input(
     "Pickup latitude",
-    value=40.78,
+    value=00.00,
     format="%.6f"
 )
 
 dropoff_longitude = st.number_input(
     "Dropoff longitude",
-    value=-73.98,
+    value=00.00,
     format="%.6f"
 )
 
 dropoff_latitude = st.number_input(
     "Dropoff latitude",
-    value=40.76,
+    value=00.00,
     format="%.6f"
 )
+
+df = pd.DataFrame({
+    "lat": [pickup_latitude, dropoff_latitude],
+    "lon": [pickup_longitude, dropoff_longitude]
+})
+
+st.map(df)
 
 '''
 ## Once we have these, let's call our API in order to retrieve a prediction
