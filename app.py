@@ -6,6 +6,7 @@ import numpy as np
 
 import datetime
 
+import requests
 
 '''
 # TaxiFareModel front
@@ -97,3 +98,19 @@ if url == 'https://taxifare.lewagon.ai/predict':
 ## Finally, we can display the prediction to the user
 
 '''
+
+params = {
+
+    "pickup_datetime": "2026-05-28 12:00:00",
+    "pickup_longitude": -74.00,
+    "dropoff_latitude": 40.01,
+    "dropoff_longitude": -74.01,
+    "passenger_count": 1
+
+}
+
+url = "https://taxifare.lewagon.ai/predict"
+
+response = requests.get(url, params=params)
+
+print(response.json())
