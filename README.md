@@ -125,7 +125,7 @@ Elle retourne un objet JSON contenant l'estimation du prix de la course.
 
 ## Auteur
 
-Kassim Said Ahmed
+### Kassim Said Ahmed
 
 Projet réalisé dans le cadre de la formation Data Science / Machine Learning du Wagon.
 
